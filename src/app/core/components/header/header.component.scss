@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+    .logo-containter {
+      display: flex;
+      align-items: center;
+      .navigation {
+        font-size: 1.5rem;
+        text-decoration: none;
+        padding: 10px;
+        i {
+          display: block;
+        }
+      }
+      .logo {
+        padding: 0 nb-theme(padding);
+        font-size: 1.75rem;
+        white-space: nowrap;
+      }
+    }
+  }
+}

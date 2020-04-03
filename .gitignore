@@ -1,0 +1,13 @@
+# logs
+*.log
+
+# dependency directory
+node_modules
+
+# folders
+dist
+tmp
+docs
+
+#package-lock.json
+package-lock.json

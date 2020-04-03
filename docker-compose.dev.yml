@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile_dev
+    hostname: web.dev.local
+    network_mode: host
+    command: npm start
+    container_name: nebular-angular-seed-dev
+    image: nebular-angular-seed/dev
+    volumes:
+      - ./src:/home/node/nebular-angular-seed/src
+    ports:
+      - '4200:4200'

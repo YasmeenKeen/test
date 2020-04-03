@@ -1,0 +1,27 @@
+<nb-layout>
+    <nb-layout-column>
+        <nb-card>
+            <nb-card-header>
+                <div class="row show-grid">
+                    <div class="col-md-8">
+                        <a href="#" (click)="back()" class="btn btn-link" aria-label="Back">
+                            <nb-icon icon="arrow-back-outline"></nb-icon>
+                        </a>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.' + theme.currentTheme "
+                            [switcherListComponent]="themeSwitcherListComponent" class="mr-2"></app-switcher>
+                        <app-switcher [icon]="['globe-2-outline']" [title]="langService.get({ translated: true })"
+                            [switcherListComponent]="langSwitcherListComponent" class="mr-3">
+                        </app-switcher>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <nb-auth-block class="container">
+                    <router-outlet></router-outlet>
+                </nb-auth-block>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

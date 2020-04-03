@@ -1,0 +1,15 @@
+<div class="field-group form-group row">
+    <label for="{{ id }}" class="col-md-3 form-control-label">
+        {{ label | translate }}
+    </label>
+    <div class="field-value col-md-9">
+        <ng-template [ngIf]="readonly" [ngIfElse]="editable">
+            <span>{{ model | emptyPipe }}</span>
+        </ng-template>
+        <ng-template #editable>
+            <input nbInput id="{{ id }}" fullWidth [type]="type" placeholder="{{ label | translate }}"
+                class="form-control" [status]="status" [(ngModel)]="model" (ngModelChange)="writeValue($event)">
+            <ng-container *ngTemplateOutlet="template"></ng-container>
+        </ng-template>
+    </div>
+</div>
